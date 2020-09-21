@@ -15,21 +15,21 @@ mv php-cs-fixer /usr/local/bin/php-cs-fixer
 # Install SQL Server drivers
 
 # Install SQL Server ODBC drivers and tools (required for the sqlsrv driver).
-# curl -f -O https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac7-8d28ddafb39b/msodbcsql17_17.5.2.2-1_amd64.apk
-# curl -f -O https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac7-8d28ddafb39b/mssql-tools_17.5.2.1-1_amd64.apk
+curl -f -O https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac7-8d28ddafb39b/msodbcsql17_17.5.2.2-1_amd64.apk
+curl -f -O https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac7-8d28ddafb39b/mssql-tools_17.5.2.1-1_amd64.apk
 
-# # Verify signature
-# curl -f -O https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac7-8d28ddafb39b/msodbcsql17_17.5.2.2-1_amd64.sig
-# curl -f -O https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac7-8d28ddafb39b/mssql-tools_17.5.2.1-1_amd64.sig
+# Verify signature
+curl -f -O https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac7-8d28ddafb39b/msodbcsql17_17.5.2.2-1_amd64.sig
+curl -f -O https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac7-8d28ddafb39b/mssql-tools_17.5.2.1-1_amd64.sig
 
-# curl -f https://packages.microsoft.com/keys/microsoft.asc | gpg --import -
-# gpg --verify msodbcsql17_17.5.2.2-1_amd64.sig msodbcsql17_17.5.2.2-1_amd64.apk
-# gpg --verify mssql-tools_17.5.2.1-1_amd64.sig mssql-tools_17.5.2.1-1_amd64.apk
+curl -f https://packages.microsoft.com/keys/microsoft.asc | gpg --import -
+gpg --verify msodbcsql17_17.5.2.2-1_amd64.sig msodbcsql17_17.5.2.2-1_amd64.apk
+gpg --verify mssql-tools_17.5.2.1-1_amd64.sig mssql-tools_17.5.2.1-1_amd64.apk
 
-# # Install the package(s)
-# yes | apk add --allow-untrusted msodbcsql17_17.5.2.2-1_amd64.apk
-# yes | apk add --allow-untrusted mssql-tools_17.5.2.1-1_amd64.apk
-# cd -
+# Install the package(s)
+yes | apk add --allow-untrusted msodbcsql17_17.5.2.2-1_amd64.apk
+yes | apk add --allow-untrusted mssql-tools_17.5.2.1-1_amd64.apk
+cd -
 
 apk add --no-cache php7 php7-dev php7-pear php7-pdo php7-openssl autoconf make g++ unixodbc-dev openjdk11-jre-headless shellcheck
 
@@ -40,8 +40,8 @@ pecl config-set php_ini /usr/local/etc/php/php.ini
 #pecl install sqlsrv
 #docker-php-ext-enable sqlsrv
 
-# pecl install pdo_sqlsrv
-# docker-php-ext-enable pdo_sqlsrv
+pecl install pdo_sqlsrv
+docker-php-ext-enable pdo_sqlsrv
 
 pecl install xdebug
 docker-php-ext-enable xdebug
