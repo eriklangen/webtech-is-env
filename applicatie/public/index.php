@@ -1,4 +1,4 @@
 <?php
-$naam = "PHP doet het";
+$title = "PHP doet het";
 ?>
-<h1><?=$naam?></h1>
+<h1><?=$title?></h1>
