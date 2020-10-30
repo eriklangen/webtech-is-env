@@ -3,7 +3,7 @@
 set -eux
 
 apk update
-apk add --no-cache gnupg
+apk add --no-cache gnupg git
 
 cd "${TMPDIR:-/tmp/}"
 
